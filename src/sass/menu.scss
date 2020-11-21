@@ -1,0 +1,60 @@
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+h2 {
+    margin: 0 0 0;
+}
+
+.p-small {
+    font-size: 14px;
+}
+
+ul {
+    padding: 0;
+
+    ul {
+        padding-left: 20px;
+    }
+}
+
+.social-media-list li {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.social-media-list li img {
+    margin-right: 6px;
+}
+
+.social-media-list li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.menu-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-gap: 16px;
+    margin: 16px 0 0;
+
+    .menu-option {
+        padding: 16px;
+        box-shadow: 2px 2px 4px 2px hsla(0, 0, 85.5%, 0.15);
+
+        .option-heading {
+            margin-bottom: 8px;
+        }
+
+        .menu-option-food-item {
+            &:not(:last-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
