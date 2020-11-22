@@ -1,18 +1,121 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import {
     NavLink
 } from "react-router-dom";
-import classNames from '../../helpers/customClassNames';
+import classNames from "../../helpers/customClassNames";
+import Fade from "../global/Fade";
+
+const MobileMenu = props => {
+    const {
+        toggleExpansion
+    } = props;
+
+    return (
+        <nav className="mobile-header-nav">
+            <ul 
+                className="mobile-header-menu"
+            >
+                <li 
+                    className="menu-item"
+                    onClick={toggleExpansion}
+                >
+                    <NavLink 
+                        to="/" 
+                        exact className="header-link" activeClassName="selected"
+                    >
+                        Home
+                    </NavLink>
+                </li>
+    
+                <li 
+                    className="menu-item"
+                    onClick={toggleExpansion}
+                >
+                    <NavLink
+                        to="/menu"
+                        className="header-link" 
+                        activeClassName="selected"
+                    >
+                        Menu
+                    </NavLink>
+                </li>
+
+                <li 
+                    className="menu-item"
+                    onClick={toggleExpansion}
+                >
+                    <NavLink 
+                        to="/about" className="header-link" activeClassName="selected"
+                    >
+                        About
+                    </NavLink>
+                </li>
+            </ul>
+        </nav>
+    );
+};
+
+const DesktopMenu = props => {
+    return (
+        <nav className="desktop-header-nav">
+            <ul 
+                id="headerMenu" 
+                className="transitionExpand"
+            >
+                <li 
+                    className="menuItems"
+                >
+                    <NavLink to="/" exact className="headerLink" activeClassName="selected">
+                        <p>Home</p>
+                    </NavLink>
+                </li>
+    
+                <li 
+                    className="menuItems"
+                >
+                    <NavLink className="headerLink" to="/menu" activeClassName="selected">
+                        <p>
+                            Menu
+                        </p>
+                    </NavLink>
+                </li>
+
+                <li 
+                    className="menuItems"
+                >
+                    <NavLink to="/about" className="headerLink" activeClassName="selected">
+                        <p>About</p>
+                    </NavLink>
+                </li>
+            </ul>
+        </nav>
+    );
+};
 
 class Header extends Component {
     constructor(props) {
         super(props);
 
         this.toggleExpansion = this.toggleExpansion.bind(this);
+        this.resizeHandler = this.resizeHandler.bind(this);
 
         this.state = {
             expanded: false
         };
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.resizeHandler, false);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.resizeHandler, false);
+    }
+
+    resizeHandler() {
+        this.setState({
+            expanded: false
+        });
     }
 
     toggleExpansion() {
@@ -58,56 +161,26 @@ class Header extends Component {
                     </div>
                 </section>
     
-                <div id="buttonWrapper" className="flexRight">
-                    <button 
-                        id="mobileButton"
-                        onClick={this.toggleExpansion}
-                    >
-                        <span className="flexBottom">
-                            <span id="hamburgerWrapper">
-                                <span className="hamburgerIcon"></span>
-                                <span className="hamburgerIcon"></span>
-                                <span className="hamburgerIcon"></span>
-                            </span>
-                        </span>
-                    </button>
-                </div>
+                <button 
+                    id="toggleMobileMenuButton"
+                    onClick={this.toggleExpansion}
+                >
+                    <div className="hamburger-icon">
+                        <div className="hamburger-icon-line"></div>
+                        <div className="hamburger-icon-line"></div>
+                        <div className="hamburger-icon-line"></div>
+                    </div>
+                </button>
     
-                <nav className="header-nav">
-                    <ul 
-                        id="headerMenu" 
-                        className="transitionExpand"
-                    >
-                        <li 
-                            className="menuItems"
-                            onClick={this.toggleExpansion}
-                        >
-                            <NavLink to="/" exact className="textAlignCenter plainLink headerLink" activeClassName="selected">
-                                <p>Home</p>
-                            </NavLink>
-                        </li>
-            
-                        <li 
-                            className="menuItems"
-                            onClick={this.toggleExpansion}
-                        >
-                            <NavLink className="plainLink headerLink" to="/about/" activeClassName="selected">
-                                <p>
-                                    About
-                                </p>
-                            </NavLink>
-                        </li>
-    
-                        <li 
-                            className="menuItems"
-                            onClick={this.toggleExpansion}
-                        >
-                            <NavLink to="/blog/" className="plainLink headerLink" activeClassName="selected">
-                                <p>Blog</p>
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>
+                <Fade
+                    show={expanded}
+                >
+                    <MobileMenu 
+                        toggleExpansion={this.toggleExpansion}
+                    />
+                </Fade>
+
+                <DesktopMenu />
             </header>
         );
     }
