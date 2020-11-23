@@ -59,32 +59,29 @@ const DesktopMenu = props => {
     return (
         <nav className="desktop-header-nav">
             <ul 
-                id="headerMenu" 
-                className="transitionExpand"
+                className="desktop-header-menu"
             >
                 <li 
-                    className="menuItems"
+                    className="menu-item"
                 >
-                    <NavLink to="/" exact className="headerLink" activeClassName="selected">
-                        <p>Home</p>
+                    <NavLink to="/" exact className="header-link" activeClassName="selected">
+                        Home
                     </NavLink>
                 </li>
     
                 <li 
-                    className="menuItems"
+                    className="menu-item"
                 >
-                    <NavLink className="headerLink" to="/menu" activeClassName="selected">
-                        <p>
-                            Menu
-                        </p>
+                    <NavLink className="header-link" to="/menu" activeClassName="selected">
+                        Menu
                     </NavLink>
                 </li>
 
                 <li 
-                    className="menuItems"
+                    className="menu-item"
                 >
-                    <NavLink to="/about" className="headerLink" activeClassName="selected">
-                        <p>About</p>
+                    <NavLink to="/about" className="header-link" activeClassName="selected">
+                        About
                     </NavLink>
                 </li>
             </ul>
@@ -100,7 +97,8 @@ class Header extends Component {
         this.resizeHandler = this.resizeHandler.bind(this);
 
         this.state = {
-            expanded: false
+            expanded: false,
+            previouslyExpanded: false
         };
     }
 
@@ -127,60 +125,71 @@ class Header extends Component {
 
         if (!expanded) {
             body.classList.add("mobile-menu-open");
+
+            this.setState({
+                expanded: true,
+                previouslyExpanded: false
+            });
         }
         else {
             body.classList.remove("mobile-menu-open");
-        }
 
-        this.setState({
-            expanded: !expanded
-        });
+            this.setState({
+                expanded: false,
+                previouslyExpanded: true
+            });
+        }
     }
 
     render() {
         const {
-            expanded
+            expanded,
+            previouslyExpanded
         } = this.state;
 
         const headerClasses = classNames([
             "bg-header",
             {
-                "expanded": expanded
+                "expanded": expanded,
+                "previously-expanded": previouslyExpanded
             }
         ]);
 
         return (
             <header className={headerClasses}>
-                <section className="title">
-                    <div className="logo-and-name-wrapper">
+                <section className="bg-header-container">
+                    <NavLink 
+                        to="/"
+                        className="bg-name-and-logo"
+                    >
                         <figure 
-                            className="morning-surprise-logo"
+                            className="bg-logo"
                         ></figure>
     
                         <h2>BundleGrove</h2>
-                    </div>
-                </section>
-    
-                <button 
-                    id="toggleMobileMenuButton"
-                    onClick={this.toggleExpansion}
-                >
-                    <div className="hamburger-icon">
-                        <div className="hamburger-icon-line"></div>
-                        <div className="hamburger-icon-line"></div>
-                        <div className="hamburger-icon-line"></div>
-                    </div>
-                </button>
-    
-                <Fade
-                    show={expanded}
-                >
-                    <MobileMenu 
-                        toggleExpansion={this.toggleExpansion}
-                    />
-                </Fade>
+                    </NavLink>
+        
+                    <button 
+                        id="toggleMobileMenuButton"
+                        onClick={this.toggleExpansion}
+                    >
+                        <div className="hamburger-icon">
+                            <div className="hamburger-icon-line"></div>
+                            <div className="hamburger-icon-line"></div>
+                            <div className="hamburger-icon-line"></div>
+                        </div>
+                    </button>
+        
+                    <Fade
+                        show={expanded}
+                    >
+                        <MobileMenu 
+                            toggleExpansion={this.toggleExpansion}
+                        />
+                    </Fade>
 
-                <DesktopMenu />
+                    <DesktopMenu />
+                </section>
             </header>
         );
     }

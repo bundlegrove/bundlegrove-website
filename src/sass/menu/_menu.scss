@@ -1,60 +1,167 @@
-h1, h2 {
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-    font-size: 40px;
-}
-
-h2 {
-    margin: 0 0 0;
-}
-
-.p-small {
-    font-size: 14px;
-}
-
-ul {
-    padding: 0;
-
-    ul {
-        padding-left: 20px;
+.menu-page {    
+    h1 {
+        margin: 0;
+        font-size: 40px;
     }
-}
+    
+    .p-small {
+        font-size: 14px;
+    }
+    
+    ul {
+        padding: 0;
+    
+        ul {
+            padding-left: 20px;
+        }
+    }
+    
+    .social-media-list li {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+    }
+    
+    .social-media-list li img {
+        margin-right: 6px;
+    }
+    
+    .social-media-list li:not(:last-child) {
+        margin-bottom: 15px;
+    }
 
-.social-media-list li {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-}
+    .menu-page-details {
+        @include global-gutter;
+        @include global-max-width;
 
-.social-media-list li img {
-    margin-right: 6px;
-}
+        margin-top: 16px;
 
-.social-media-list li:not(:last-child) {
-    margin-bottom: 15px;
-}
+        .delivery-information {
+            margin-top: 16px;
+        }
+    }
 
-.menu-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
-    grid-gap: 16px;
-    margin: 16px 0 0;
+    .menu {
+        margin-top: 32px;
 
-    .menu-option {
-        padding: 16px;
-        box-shadow: 2px 2px 4px 2px hsla(0, 0, 85.5%, 0.15);
-
-        .option-heading {
-            margin-bottom: 8px;
+        .menu-search-container {
+            border-top: 1px solid $bg-theme-two-light-color;
+            border-bottom: 1px solid $bg-theme-two-light-color;
+            background-color: #000
         }
 
-        .menu-option-food-item {
-            &:not(:last-child) {
-                margin-bottom: 8px;
+        .menu-search {
+            @include global-gutter;
+            @include global-max-width;
+
+            margin-top: 9px;
+            margin-bottom: 10px;
+
+            .menu-search-items {
+                position: relative;
+            }
+
+            .search-icon-container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                top: 0px;
+                left: 8px;
+                pointer-events: none;
+            }
+
+            svg {
+                color: #aaa;
+                font-size: 16px;
+            }
+
+            .menu-search-input {
+                width: 100%;
+                max-width: 400px;
+                border-radius: 3px;
+                border: none;
+                font-size: 16px;
+                padding: 7px 10px 8px;
+                padding-left: 32px;
             }
         }
     }
+    
+    .menu-categories {
+        @include global-gutter;
+        @include global-max-width;
+
+        margin: 32px 0 32px;
+
+        .menu-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            grid-gap: 16px;
+            margin-top: 32px;
+
+            .no-menu-search-results {
+                justify-self: start;
+            }
+        }
+    
+        .menu-option {
+            width: 100%;
+            padding: 16px;
+            border-width: 6px;
+            border-style: solid;
+            border-radius: 3px;
+            box-shadow: 1px 1px 8px 4px hsla(0, 0, 100%, 0.08);
+            // background-color: white;
+            // color: #1e1e1e;
+
+            .option-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 16px;
+
+                .option-heading, .option-price {
+                    font-size: 18px;
+                }
+
+                .option-price {
+                    font-weight: bold;
+                }
+            }
+
+            .menu-option-food-item {
+                $dot-size: 4px;
+                padding-left: (2*$dot-size);
+
+                .food-item-text {
+                    &:first-of-type {
+                        display: flex;
+                        align-items: center;
+                        margin-left: -(2*$dot-size);
+
+                        &:before {
+                            content: "";
+                            display: block;
+                            height: $dot-size;
+                            width: $dot-size;
+                            margin-right: $dot-size;
+                            border-radius: 50%;
+                            background-color: #aaa;
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+
+        @media (min-width: 1100px) {
+            grid-template-columns: repeat(auto-fill, 360px);
+            justify-content: center;
+        }
+    }  
 }

@@ -1,4 +1,9 @@
 @mixin global-gutter {
     padding-left: 16px;
     padding-right: 16px;
+
+    @media (min-width: 768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
