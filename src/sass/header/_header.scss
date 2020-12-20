@@ -112,10 +112,10 @@ body.mobile-menu-open {
 
 .bg-header {
     $name-and-logo-width: 182px;
-
     padding-top: 16px;
     padding-bottom: 16px;
-    border-bottom: 2px solid $bg-theme-one-primary-color;
+    border-top: 2px solid $bg-theme-one-primary-color;
+    background-color: $bg-theme-two-primary-color;
 
     position: relative;
     z-index: 1;
@@ -198,12 +198,13 @@ body.mobile-menu-open {
 
     .mobile-header-nav {
         $nav-font-size: 22px;
+        $top: 66px;
 
         position: fixed;
         left: 0;
-        top: 70px;
+        top: $top;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - #{$top});
         background: $bg-theme-two-primary-color;
         overflow-y: auto;
 

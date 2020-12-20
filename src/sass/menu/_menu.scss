@@ -15,6 +15,10 @@
             padding-left: 20px;
         }
     }
+
+    .secondary-menu {
+      border-top: none;
+    }
     
     .social-media-list li {
         display: flex;
@@ -30,6 +34,17 @@
         margin-bottom: 15px;
     }
 
+    .menu-header {
+        background: white;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        h2 {
+            @include global-gutter;
+            @include global-max-width;
+        }
+    }
+
     .menu-page-details {
         @include global-gutter;
         @include global-max-width;
@@ -42,12 +57,9 @@
     }
 
     .menu {
-        margin-top: 32px;
-
         .menu-search-container {
-            border-top: 1px solid $bg-theme-two-light-color;
-            border-bottom: 1px solid $bg-theme-two-light-color;
-            background-color: #000
+            border-top: 1px solid $bg-light-gray;
+            border-bottom: 1px solid $bg-light-gray;
         }
 
         .menu-search {
@@ -67,8 +79,18 @@
                 align-items: center;
                 position: absolute;
                 top: 0px;
-                left: 8px;
+                left: 0;
+                padding: 0 10px;
                 pointer-events: none;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 60%;
+                    width: 1px;
+                    margin-left: 10px;
+                    background: $bg-light-gray;
+                }
             }
 
             svg {
@@ -80,10 +102,10 @@
                 width: 100%;
                 max-width: 400px;
                 border-radius: 3px;
-                border: none;
+                border: 1px solid #e1e1e1;
                 font-size: 16px;
                 padding: 7px 10px 8px;
-                padding-left: 32px;
+                padding-left: 47px;
             }
         }
     }
@@ -92,7 +114,9 @@
         @include global-gutter;
         @include global-max-width;
 
-        margin: 32px 0 32px;
+        .menu-category {
+          padding-top: 32px;
+        }
 
         .menu-options {
             display: grid;
@@ -108,32 +132,73 @@
     
         .menu-option {
             width: 100%;
-            padding: 16px;
-            border-width: 6px;
-            border-style: solid;
             border-radius: 3px;
-            box-shadow: 1px 1px 8px 4px hsla(0, 0, 100%, 0.08);
-            // background-color: white;
-            // color: #1e1e1e;
+            box-shadow: 1px 3px 6px 4px hsla(0, 0, 0%, 0.08);
+            background: white;
 
             .option-header {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-between;
                 align-items: center;
-                margin-bottom: 16px;
+                position: relative;
 
                 .option-heading, .option-price {
-                    font-size: 18px;
+                    padding: 16px;
+                    font-size: 16px;
+                }
+
+                .option-heading {
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    white-space: nowrap;
+                    padding-right: 0;
+
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        background: $bg-light-gray;
+                        height: 1px;
+                        margin: 0 20px;
+                    }
                 }
 
                 .option-price {
                     font-weight: bold;
+                    padding-left: 0;
+                }
+
+                .header-border {
+                    width: 100%;
+                    height: 2px;
+                }
+            }
+
+            .menu-option-body {
+                padding: 16px;
+
+                .menu-option-description {
+                    margin-bottom: 16px;
+                }
+
+                .menu-option-list-heading {
+                    color: $bg-dark-gray;
+                    font-size: 16px;
+                    margin-bottom: 4px;
+                }
+
+                .menu-option-food-items {
+                    padding-left: 16px;
                 }
             }
 
             .menu-option-food-item {
                 $dot-size: 4px;
                 padding-left: (2*$dot-size);
+                font-size: 14px;
+                color: $bg-dark-gray;
 
                 .food-item-text {
                     &:first-of-type {

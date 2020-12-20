@@ -1,9 +1,10 @@
 export default [
     {
-        "category": "Breakfasts",
+        "category": "Surprise Breakfasts",
         "menu_options": [
             {
                 "menu_option": "Birthday Surprise",
+                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
                 "price": "$50",
                 "food_line_items": [
                     {
@@ -24,14 +25,17 @@ export default [
                     }
                 ],
                 "colors": [
-                    "#66ffcc",
-                    "#9fffff",
-                    "#66ffcc"
+                    "#01BEFE",
+                    "#FFDD00",
+                    "#FF7D00",
+                    "#FF006D",
+                    "#8F00FF"
                 ]
             },
             {
-                "menu_option": "Morning Surprise Special",
+                "menu_option": "Morning Special",
                 "price": "$70",
+                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
                 "food_line_items": [
                     {
                         "choices": [
@@ -64,6 +68,7 @@ export default [
             {
                 "menu_option": "American Breakfast",
                 "price": "$80",
+                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
                 "food_line_items": [
                     {
                         "choices": [
@@ -116,6 +121,7 @@ export default [
             {
                 "menu_option": "French Breakfast",
                 "price": "$80",
+                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
                 "food_line_items": [
                     {
                         "choices": [
@@ -162,6 +168,7 @@ export default [
             {
                 "menu_option": "Colombian Breakfast",
                 "price": "$90",
+                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
                 "food_line_items": [
                     {
                         "choices": [

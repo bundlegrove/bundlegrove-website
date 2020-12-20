@@ -32,11 +32,11 @@ const MobileMenu = props => {
                     onClick={toggleExpansion}
                 >
                     <NavLink
-                        to="/menu"
+                        to="/gifts"
                         className="header-link" 
                         activeClassName="selected"
                     >
-                        Menu
+                        Gifts
                     </NavLink>
                 </li>
 

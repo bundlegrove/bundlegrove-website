@@ -21,14 +21,17 @@ $bg-theme-one-dark-color: #1ccb9b;
 $bg-theme-two-primary-color: #212121;
 $bg-theme-two-light-color: #484848;
 $bg-theme-two-dark-color: #000000;
+$bg-light-gray: #d3d3d3;
+$bg-dark-gray: #555;
+$bg-link-color: #4490b7;
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: $bg-theme-two-primary-color;
-    color: white;
+    background-color: #f8f8f8;
+    color: $bg-theme-two-primary-color;
     font-family: "OpenSans", sans-serif;
 }
 
@@ -41,7 +44,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 a {
-    color: #74c0e7
+    color: $bg-link-color;
 }
 
 @mixin no-select {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import menuCategories from './menuData';
+import SecondaryMenu from '../global/SecondaryMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -12,7 +13,8 @@ const MenuOption = props => {
         colors,
         food_line_items,
         menu_option,
-        price
+        price,
+        description
     } = option;
 
     const foodLineItems = food_line_items.map((item, i) => {
@@ -52,18 +54,15 @@ const MenuOption = props => {
 
     const colorStr = colors.join(",")
 
-    const borderImage = "linear-gradient(90deg, " + colorStr + ") 1%";
+    const backgroundImage = "linear-gradient(90deg, " + colorStr + ")";
 
     return (
         <section 
             className="menu-option"
-            style={
-                {
-                    borderImage
-                }
-            }
         >
-            <header className="option-header">
+            <header 
+                className="option-header"
+            >
                 <h3 className="option-heading">
                     {menu_option}
                 </h3>
@@ -71,17 +70,33 @@ const MenuOption = props => {
                 <div className="option-price">
                     {price}
                 </div>
+
+                <div
+                    className="header-border"
+                    style={
+                        {
+                            backgroundImage
+                        }
+                    }
+                ></div>
             </header>
 
-            <ul className="menu-option-food-items">
-                { foodLineItems }
-            </ul>
+            <section className="menu-option-body">
+                <p className="menu-option-description">{description}</p>
+
+                <div className="menu-option-list-heading">Includes:</div>
+
+                <ul className="menu-option-food-items">
+                    { foodLineItems }
+                </ul>
+            </section>
         </section>
     );
 };
 
 const MenuCategory = props => {
     const {
+        category,
         options,
         searchStr
     } = props;
@@ -132,10 +147,14 @@ const MenuCategory = props => {
         );
     });
 
+    const hyphenize = (option) => {
+      return option.replace(/\s+/g, '-').toLowerCase();
+    }
+
     return (
         <section className="menu-categories">
-            <section className="menu-category">
-                <h3 className="menu-category-heading">Breakfasts</h3>
+            <section id={hyphenize(category)} className="menu-category">
+                <h3 className="menu-category-heading">{ category }</h3>
             
                 <section className="menu-options">
                     { MenuOptions }
@@ -192,25 +211,28 @@ class Menu extends Component {
             <MenuCategory 
                 key={i}
                 options={menuCategory.menu_options}
+                category={menuCategory.category}
                 searchStr={searchStr}
             />
         ));
 
         return (
             <article className="menu-page">
-                <h2 className="page-header">Menu</h2>
+                <section className="menu-header">
+                    <h2 className="menu-heading">Gifts</h2>
 
-                <section className="menu-page-details">
-                    <p className="gift-description">
-                        All our <strong>breakfasts</strong> includes a tray, two balloons, and a card. Additional balloons or flower arrangements are offered for an additional fee.
-                    </p>
+                    <section className="menu-page-details">
+                        <p className="gift-description">
+                            All our breakfasts includes a tray, two balloons, and a card. Additional balloons or flower arrangements are offered for an additional fee.
+                        </p>
 
-                    <section className="delivery-information">
-                        <p><strong>Free</strong> delivery is offered for addresses within 25 miles of <a
-                            href="https://www.google.com/maps/place/Reston+Town+Center/@38.9589138,-77.3636571,17z/data=!3m1!4b1!4m5!3m4!1s0x89b6481ec20e5467:0xb1e039cd5342749!8m2!3d38.9589096!4d-77.3614631"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Reston Town Center</a>.</p>
+                        <section className="delivery-information">
+                            <p><strong>Free</strong> delivery is offered for addresses within 25 miles of <a
+                                href="https://www.google.com/maps/place/Reston+Town+Center/@38.9589138,-77.3636571,17z/data=!3m1!4b1!4m5!3m4!1s0x89b6481ec20e5467:0xb1e039cd5342749!8m2!3d38.9589096!4d-77.3614631"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Reston Town Center</a>.</p>
+                        </section>
                     </section>
                 </section>
 
@@ -237,6 +259,13 @@ class Menu extends Component {
                             </div>
                         </form>
                     </div>
+
+                    <SecondaryMenu 
+                      options={[
+                        "Surprise Breakfasts",
+                        "Baskets"
+                      ]}
+                    />
 
                     { MenuCategories }
                 </section>

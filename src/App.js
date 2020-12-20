@@ -14,7 +14,7 @@ function App() {
                 <Header />
 
                 <Switch>
-                    <Route path="/" component={Menu}/>
+                    <Route path="/menu" component={Menu}/>
                 </Switch>
             </Router>
         </article>
