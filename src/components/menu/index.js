@@ -20,7 +20,7 @@ const MenuOption = props => {
     const foodLineItems = food_line_items.map((item, i) => {
         const {
             choices = []
-        } = item || {};
+        } = item;
 
         const foodItemCopy = choices.map((choice, i, arr) => {
             const next = arr[i + 1];
@@ -52,43 +52,42 @@ const MenuOption = props => {
         )
     });
 
-    const colorStr = colors.join(",")
-
-    const backgroundImage = "linear-gradient(90deg, " + colorStr + ")";
-
     return (
         <section 
             className="menu-option"
         >
-            <header 
+            {(menu_option) &&
+              <header 
                 className="option-header"
-            >
-                <h3 className="option-heading">
-                    {menu_option}
-                </h3>
+              >
+                  <h3 className="option-heading">
+                      {menu_option}
+                  </h3>
 
-                <div className="option-price">
-                    {price}
-                </div>
+                  {(price) &&
+                    <div className="option-price">
+                      {price}
+                    </div>
+                  }
 
-                <div
-                    className="header-border"
-                    style={
-                        {
-                            backgroundImage
-                        }
-                    }
-                ></div>
-            </header>
+                  <div
+                      className="header-border"
+                  ></div>
+              </header>
+            }
 
             <section className="menu-option-body">
                 <p className="menu-option-description">{description}</p>
 
-                <div className="menu-option-list-heading">Includes:</div>
+                {(foodLineItems?.length > 0) &&
+                  <>
+                    <div className="menu-option-list-heading">Includes:</div>
 
-                <ul className="menu-option-food-items">
-                    { foodLineItems }
-                </ul>
+                    <ul className="menu-option-food-items">
+                      {foodLineItems}
+                    </ul>
+                  </>
+                }
             </section>
         </section>
     );
@@ -152,21 +151,19 @@ const MenuCategory = props => {
     }
 
     return (
-        <section className="menu-categories">
-            <section id={hyphenize(category)} className="menu-category">
-                <h3 className="menu-category-heading">{ category }</h3>
-            
-                <section className="menu-options">
-                    { MenuOptions }
+      <section id={hyphenize(category)} className="menu-category">
+          <h3 className="menu-category-heading">{ category }</h3>
+      
+          <section className="menu-options">
+              { MenuOptions }
 
-                    {(MenuOptions && MenuOptions.length === 0) &&
-                        <div className="no-menu-search-results">
-                            No results. Try searching for another food, price, or basket name!
-                        </div>
-                    }
-                </section>
-            </section>
-        </section>
+              {(MenuOptions && MenuOptions.length === 0) &&
+                  <div className="no-menu-search-results">
+                      No results. Try searching for another food, price, or basket name!
+                  </div>
+              }
+          </section>
+      </section>
     );
 };
 
@@ -267,7 +264,11 @@ class Menu extends Component {
                       ]}
                     />
 
-                    { MenuCategories }
+                    <section
+                      className="menu-categories"
+                    >
+                      {MenuCategories}
+                    </section>
                 </section>
             </article>
         )

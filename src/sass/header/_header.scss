@@ -114,8 +114,8 @@ body.mobile-menu-open {
     $name-and-logo-width: 182px;
     padding-top: 16px;
     padding-bottom: 16px;
-    border-top: 2px solid $bg-theme-one-primary-color;
-    background-color: $bg-theme-two-primary-color;
+    border-bottom: 4px solid $bg-theme-one-dark-color;
+    background: white;
 
     position: relative;
     z-index: 1;
@@ -147,7 +147,8 @@ body.mobile-menu-open {
         }
 
         h2 {
-            color: white;
+            // color: white;
+            color: $bg-theme-two-primary-color;
             font-size: 22px;
             margin-left: 12px;
             font-weight: normal;
@@ -176,7 +177,7 @@ body.mobile-menu-open {
             position: absolute;
             width: 24px;
             height: 2px;
-            background-color: white;
+            background-color: $bg-theme-two-primary-color;
             animation-duration: 0.3s;
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
@@ -198,14 +199,14 @@ body.mobile-menu-open {
 
     .mobile-header-nav {
         $nav-font-size: 22px;
-        $top: 66px;
+        $top: 68px;
 
         position: fixed;
         left: 0;
         top: $top;
         width: 100%;
         height: calc(100vh - #{$top});
-        background: $bg-theme-two-primary-color;
+        background: white;
         overflow-y: auto;
 
         .mobile-header-menu {
@@ -225,7 +226,7 @@ body.mobile-menu-open {
             padding: $nav-font-size 0;
             width: 100%;
             text-decoration: none;
-            color: #e0e0e0;
+            color: $bg-theme-two-primary-color;
 
             &.selected {
                 font-weight: bold;

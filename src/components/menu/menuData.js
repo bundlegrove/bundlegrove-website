@@ -217,5 +217,17 @@ export default [
                 ]
             }
         ]
-    }
+    },
+    {
+      "category": "Baskets",
+      "menu_options": [
+          {
+              "menu_option": "",
+              "description": "We deliver customized baskets suited to your needs. Please contact us to discuss how we can create the perfect gift.",
+              "price": "",
+              "food_line_items": [],
+              "colors": []
+          }
+      ]
+  }
 ];

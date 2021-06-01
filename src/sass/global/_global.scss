@@ -29,6 +29,10 @@ $bg-link-color: #4490b7;
     box-sizing: border-box;
 }
 
+:root {
+  --bg-grey: #d3d3d3;
+}
+
 body {
     background-color: #f8f8f8;
     color: $bg-theme-two-primary-color;
