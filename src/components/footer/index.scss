@@ -1,0 +1,46 @@
+@import '../../sass/global/media-queries';
+
+.bg-footer {
+  @include global-gutter;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: white;
+  background: #333;
+  margin-top: 64px;
+
+  .footer-inner-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .footer-contents {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    font-size: var(--bg-font-size-medium);
+
+    .vertical-divider {
+      background: var(--bg-grey);
+      width: 1px;
+    }
+
+    .bg-name, .site-links {
+      position: relative;
+    }
+
+    .bg-name {
+      display: flex;
+      align-items: center;
+    }
+
+    .site-links, .social-media-links {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}

@@ -31,6 +31,8 @@ $bg-link-color: #4490b7;
 
 :root {
   --bg-grey: #d3d3d3;
+  --bg-font-size-small: 12px;
+  --bg-font-size-medium: 16px;
 }
 
 body {
@@ -41,6 +43,7 @@ body {
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul {
@@ -51,15 +54,20 @@ a {
     color: $bg-link-color;
 }
 
+.simple-link {
+  text-decoration: none;
+  color: white;
+}
+
 @mixin no-select {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
 }
 
 @mixin global-max-width {

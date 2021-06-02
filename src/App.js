@@ -1,6 +1,6 @@
 import React from "react";
 import Header from './components/header';
-import Menu from './components/menu';
+import Gifts from './components/gifts';
 import './App.scss';
 import {
   HashRouter as Router,
@@ -14,9 +14,9 @@ function App() {
         <article className="bg">
             <Router>
                 <Header />
-
+                    
                 <Switch>
-                    <Route path="/menu" component={Menu}/>
+                    <Route path="/gifts" component={Gifts}/>
                 </Switch>
 
                 <Footer />
