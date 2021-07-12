@@ -18,21 +18,26 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 80px;
     flex: 1;
     font-size: var(--bg-font-size-medium);
+
+    h3 {
+      font-size: var(--bg-font-size-medium);
+      margin-bottom: 12px;
+    }
+
+    .footer-group {
+      width: 33.333%;
+    }
 
     .vertical-divider {
       background: var(--bg-grey);
       width: 1px;
     }
 
-    .bg-name, .site-links {
+    .site-links {
       position: relative;
-    }
-
-    .bg-name {
-      display: flex;
-      align-items: center;
     }
 
     .site-links, .social-media-links {

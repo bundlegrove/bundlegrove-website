@@ -21,9 +21,11 @@ $bg-theme-one-dark-color: #1ccb9b;
 $bg-theme-two-primary-color: #212121;
 $bg-theme-two-light-color: #484848;
 $bg-theme-two-dark-color: #000000;
+$bg-dark-theme-primary: rgba(0, 0, 0, 0.8);
 $bg-light-gray: #d3d3d3;
 $bg-dark-gray: #555;
 $bg-link-color: #4490b7;
+$font-size-small: 12px;
 
 * {
     box-sizing: border-box;
@@ -33,6 +35,7 @@ $bg-link-color: #4490b7;
   --bg-grey: #d3d3d3;
   --bg-font-size-small: 12px;
   --bg-font-size-medium: 16px;
+  --bg-font-size-large: 20px;
 }
 
 body {

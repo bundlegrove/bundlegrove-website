@@ -114,8 +114,8 @@ body.mobile-menu-open {
     $name-and-logo-width: 182px;
     padding-top: 16px;
     padding-bottom: 16px;
-    border-bottom: 4px solid $bg-theme-one-dark-color;
-    background: white;
+    border-bottom: 4px solid $bg-theme-one-light-color;
+    background: $bg-dark-theme-primary;
 
     position: relative;
     z-index: 1;
@@ -147,8 +147,7 @@ body.mobile-menu-open {
         }
 
         h2 {
-            // color: white;
-            color: $bg-theme-two-primary-color;
+            color: white;
             font-size: 22px;
             margin-left: 12px;
             font-weight: normal;
@@ -177,7 +176,7 @@ body.mobile-menu-open {
             position: absolute;
             width: 24px;
             height: 2px;
-            background-color: $bg-theme-two-primary-color;
+            background-color: white;
             animation-duration: 0.3s;
             animation-iteration-count: 1;
             animation-timing-function: ease-in-out;
@@ -230,7 +229,6 @@ body.mobile-menu-open {
 
             &.selected {
                 font-weight: bold;
-                color: white;
             }
         }
     }

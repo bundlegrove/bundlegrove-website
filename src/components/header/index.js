@@ -72,8 +72,8 @@ const DesktopMenu = props => {
                 <li 
                     className="menu-item"
                 >
-                    <NavLink className="header-link" to="/menu" activeClassName="selected">
-                        Menu
+                    <NavLink className="header-link" to="/gifts" activeClassName="selected">
+                        Gifts
                     </NavLink>
                 </li>
 
