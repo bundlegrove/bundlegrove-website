@@ -7,15 +7,15 @@ class Footer extends Component {
       <footer className="bg-footer">
         <div className="footer-inner-container">
           <div className="footer-contents">
-            <div className="footer-group">
+            {/* <div className="footer-group">
               <h3 className="bg-name">
                 BundleGrove
               </h3>
-            </div>
+            </div> */}
 
             <div className="footer-group">
               <h3>
-                Site Map
+                BundleGrove
               </h3>
 
               <ul className="site-links">

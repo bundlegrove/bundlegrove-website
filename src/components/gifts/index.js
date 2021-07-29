@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import menuCategories from './menuData';
 import SecondaryMenu from '../global/SecondaryMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const MenuOption = props => {
     const {
@@ -10,7 +10,6 @@ const MenuOption = props => {
     } = props;
 
     const {
-        colors,
         food_line_items,
         menu_option,
         price,
@@ -51,7 +50,7 @@ const MenuOption = props => {
             </li>
         )
     });
-
+  
     return (
         <section 
             className="menu-option"
@@ -77,7 +76,7 @@ const MenuOption = props => {
             }
 
             <section className="menu-option-body">
-                <p className="menu-option-description">{description}</p>
+                {description}
 
                 {(foodLineItems?.length > 0) &&
                   <>

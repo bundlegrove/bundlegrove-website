@@ -1,10 +1,14 @@
-export default [
+import {
+  NavLink
+} from 'react-router-dom';
+
+const categories = [
     {
         "category": "Surprise Breakfasts",
         "menu_options": [
             {
                 "menu_option": "Birthday Surprise",
-                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
+                "description": <p className="menu-option-description">Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.</p>,
                 "price": "$50",
                 "food_line_items": [
                     {
@@ -35,7 +39,7 @@ export default [
             {
                 "menu_option": "Morning Special",
                 "price": "$70",
-                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
+                "description": <p className="menu-option-description">Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.</p>,
                 "food_line_items": [
                     {
                         "choices": [
@@ -68,7 +72,7 @@ export default [
             {
                 "menu_option": "American Breakfast",
                 "price": "$80",
-                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
+                "description": <p className="menu-option-description">Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.</p>,
                 "food_line_items": [
                     {
                         "choices": [
@@ -121,7 +125,7 @@ export default [
             {
                 "menu_option": "French Breakfast",
                 "price": "$80",
-                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
+                "description": <p className="menu-option-description">Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.</p>,
                 "food_line_items": [
                     {
                         "choices": [
@@ -168,7 +172,7 @@ export default [
             {
                 "menu_option": "Colombian Breakfast",
                 "price": "$90",
-                "description": "Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.",
+                "description": <p className="menu-option-description">Delivered in a wooden tray, this surprise breakfast includes home-baked food and a Starbucks iced coffee for that special someone.</p>,
                 "food_line_items": [
                     {
                         "choices": [
@@ -223,7 +227,7 @@ export default [
       "menu_options": [
           {
               "menu_option": "",
-              "description": "We deliver customized baskets suited to your needs. Please contact us to discuss how we can create the perfect gift.",
+              "description": <p className="menu-option-description">We deliver customized baskets suited to your needs. <NavLink to="/">Please contact us</NavLink> to discuss how we can create the perfect gift.</p>,
               "price": "",
               "food_line_items": [],
               "colors": []
@@ -231,3 +235,5 @@ export default [
       ]
   }
 ];
+
+export default categories;
