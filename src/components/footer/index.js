@@ -26,7 +26,7 @@ class Footer extends Component {
                 </li>
 
                 <li>
-                  <a className="simple-link" href="/menu">
+                  <a className="simple-link" href="/gifts">
                     Gifts
                   </a>
                 </li>

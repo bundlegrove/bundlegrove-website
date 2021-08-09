@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import menuCategories from './menuData';
 import SecondaryMenu from '../global/SecondaryMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const MenuOption = props => {
     const {
@@ -240,8 +239,8 @@ class Menu extends Component {
                         >
                             <div className="menu-search-items">
                                 <div className="search-icon-container">
-                                    <FontAwesomeIcon 
-                                        icon={faSearch}
+                                    <FontAwesomeIcon
+                                      icon={['fas', 'search']}
                                     />
                                 </div>
 
