@@ -7,4 +7,48 @@
       margin-top: 12px;
     }
   }
+
+  .product-summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+    max-width: 1080px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--bg-grey);
+      padding: 16px 0;
+
+      svg {
+        font-size: 24px;
+        width: 30px;
+      }
+
+      .product-summary-copy {
+        p {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .premade-item {
+      svg {
+        color: var(--bg-purple);
+      }
+    }
+
+    .customizable-item {
+      svg {
+        color: var(--bg-blue);
+      }
+    }
+
+    .green-item {
+      svg {
+        color: var(--bg-green);
+      }
+    }
+  }
 }
