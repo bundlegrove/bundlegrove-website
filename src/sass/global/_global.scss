@@ -52,6 +52,7 @@ html, body {
   --bg-font-size-medium: 16px;
   --bg-font-size-large: 20px;
   --bg-gutter: 16px;
+  --bg-rounded-corners: 3px;
 
   @media (min-width: 768px) {
     --bg-gutter: 30px;
@@ -64,6 +65,10 @@ body {
     font-family: "OpenSans", sans-serif;
 }
 
+button {
+  line-height: 1;
+}
+
 #root {
   min-height: 100%;
   display: grid;
@@ -73,6 +78,11 @@ body {
 ul {
     list-style: none;
     padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul {

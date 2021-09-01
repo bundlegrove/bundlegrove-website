@@ -1,0 +1,10 @@
+.bg-button {
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--bg-blue);
+  color: white;
+  font-size: var(--bg-font-size-medium);
+  padding: 12px 22px;
+  border-radius: var(--bg-rounded-corners);
+}

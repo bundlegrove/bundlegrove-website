@@ -1,9 +1,13 @@
 .home-page {
-  header {
+  .home-page-header {
     background: var(--bg-light-blue);
-    padding: 16px var(--bg-gutter);
+    padding: 32px var(--bg-gutter);
 
     p {
+      margin-top: 12px;
+    }
+
+    .cta-wrapper {
       margin-top: 12px;
     }
   }
@@ -18,12 +22,22 @@
     li {
       display: flex;
       flex-direction: column;
-      border-bottom: 1px solid var(--bg-grey);
-      padding: 16px 0;
+      padding: 16px var(--bg-gutter);
+
+      img {
+        height: 330px;
+        width: 100%;
+        object-fit: cover;
+      }
 
       svg {
         font-size: 24px;
         width: 30px;
+        margin-right: 8px;
+      }
+
+      h2 {
+        margin-top: 16px;
       }
 
       .product-summary-copy {
