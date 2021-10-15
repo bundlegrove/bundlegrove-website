@@ -24,11 +24,11 @@ class Home extends Component {
         <header className="home-page-header">
           <h1>A gift bundle for every occasion</h1>
 
-          <p>Whether you're celebrating a special occasion or showing someone how much you appreciate them, BundleGrove will help you make the perfect gift.</p>
+          <p>Whether you're celebrating a special event, milestone, or showing someone how much you appreciate them, BundleGrove will help you make the perfect gift.</p>
 
           <div className="cta-wrapper">
             <Button 
-              text="View Bundles"
+              text="Build a Bundle"
             />
           </div>
         </header>
