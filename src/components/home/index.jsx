@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import basket1 from '../../assets/baskets/basket-1.jpg';
 import basket2 from '../../assets/baskets/basket-2.jpg';
 import basket3 from '../../assets/baskets/basket-3.jpg';
@@ -22,7 +22,7 @@ class Home extends Component {
     return (
       <article className="home-page">
         <header className="home-page-header">
-          <h1>A gift bundle for every occasion</h1>
+          <h1>A gift bundle for any occasion</h1>
 
           <p>Whether you're celebrating a special event, milestone, or showing someone how much you appreciate them, BundleGrove will help you make the perfect gift.</p>
 
@@ -42,6 +42,7 @@ class Home extends Component {
                 <header>
                   <img 
                     src={basket1}
+                    alt="Basket"
                   />
                 </header>
 
@@ -69,6 +70,7 @@ class Home extends Component {
                 <header>
                   <img
                     src={basket2}
+                    alt="Basket"
                   />
                 </header>
 
@@ -79,7 +81,13 @@ class Home extends Component {
                   Customize your own bundle
                 </h2>
 
-                <p>Build your perfect bundle by selecting what you want.</p>
+                <p>Build your perfect bundle by mix and matching different selections.</p>
+
+                <NavLink
+                  to={"/"}
+                >
+                  Build Your Own Bundle
+                </NavLink>
               </section>
             </li>
 
@@ -89,6 +97,7 @@ class Home extends Component {
               <header>
                 <img
                   src={basket3}
+                  alt="Basket"
                 />
               </header>
 
