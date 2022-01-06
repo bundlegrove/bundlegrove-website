@@ -17,7 +17,8 @@ import {
   faRecycle,
   faGift,
   faCoffee,
-  faShoppingBasket
+  faShoppingBasket,
+  faAngleRight
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -25,7 +26,8 @@ library.add(
   faRecycle,
   faGift,
   faCoffee,
-  faShoppingBasket
+  faShoppingBasket,
+  faAngleRight
 );
 
 function App() {

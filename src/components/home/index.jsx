@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import './index.scss';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import basket1 from '../../assets/baskets/basket-1.jpg';
 import basket2 from '../../assets/baskets/basket-2.jpg';
 import basket3 from '../../assets/baskets/basket-3.jpg';
 import Button from '../button';
-import {
-  NavLink
-} from 'react-router-dom';
+import Card from '../card';
 
 class Home extends Component {
   constructor(props) {
@@ -30,6 +27,10 @@ class Home extends Component {
             <Button 
               text="Build a Bundle"
             />
+
+            <Button
+              text="View Premade Bundles"
+            />
           </div>
         </header>
 
@@ -38,78 +39,34 @@ class Home extends Component {
             <li
               className="premade-item"
             >    
-              <section className="product-summary-copy">
-                <header>
-                  <img 
-                    src={basket1}
-                    alt="Basket"
-                  />
-                </header>
-
-                <h2>
-                  {/* <FontAwesomeIcon
-                    icon={['fas', 'gift']}
-                  /> */}
-                  Premade bundles
-                </h2>
-
-                <p>Look through our premade bundles to decide which one is right for you. Add a personalized note at no additional charge.</p>
-
-                <NavLink 
-                  to={"/"}
-                >
-                  View Premade Bundles
-                </NavLink>
-              </section>
+              <Card
+                image={basket1}
+                header={"Premade bundles"}
+                copy={"Look through our premade bundles to decide which one is right for you. Add a personalized note at no additional charge."}
+                links={[{ href: "/", copy: "View Premade Bundles" }]}
+              />
             </li>
 
             <li
               className="customizable-item"
             >
-              <section className="product-summary-copy">
-                <header>
-                  <img
-                    src={basket2}
-                    alt="Basket"
-                  />
-                </header>
-
-                <h2>
-                  {/* <FontAwesomeIcon
-                    icon={['fas', 'shopping-basket']}
-                  /> */}
-                  Customize your own bundle
-                </h2>
-
-                <p>Build your perfect bundle by mix and matching different selections.</p>
-
-                <NavLink
-                  to={"/"}
-                >
-                  Build Your Own Bundle
-                </NavLink>
-              </section>
+              <Card 
+                image={basket2}
+                header={"Customize your own bundle"}
+                copy={"Build your perfect bundle by mix and matching different selections."}
+                links={[{href: "/", copy: "Build Your Own Bundle"}]}
+              />
             </li>
 
             <li
               className="green-item"
             >
-              <header>
-                <img
-                  src={basket3}
-                  alt="Basket"
-                />
-              </header>
-
-              <section className="product-summary-copy">
-                <h2>
-                  {/* <FontAwesomeIcon
-                    icon={['fas', 'recycle']}
-                  /> */}
-                  Reuse and recycle bundle materials
-                </h2>
-                <p>We encourage everyone to either reuse or recycle our bundle boxes and decorations!</p>
-              </section>
+              <Card
+                image={basket3}
+                header={"Reuse and recycle bundle materials"}
+                copy={"We encourage everyone to either reuse or recycle our bundle boxes and decorations!"}
+                // links={[{ href: "/", copy: "Build Your Own Bundle" }]}
+              />
             </li>
           </ul>
         </section>

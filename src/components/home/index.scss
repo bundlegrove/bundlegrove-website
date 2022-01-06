@@ -5,7 +5,7 @@
     @include global-gutter;
 
     background: #fff;
-    padding: 32px;
+    padding: 48px 32px;
     border-bottom: 1px solid #ddd;
 
     p {
@@ -14,6 +14,9 @@
 
     .cta-wrapper {
       margin-top: 12px;
+
+      display: flex;
+      gap: 8px;
     }
   }
 
@@ -28,36 +31,6 @@
       display: flex;
       flex-direction: column;
       padding: 0px var(--bg-gutter);
-
-      img {
-        height: 280px;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-
-      svg {
-        font-size: 24px;
-        width: 30px;
-        margin-right: 8px;
-      }
-
-      h2 {
-        margin-top: 16px;
-      }
-
-      .product-summary-copy {
-        p {
-          margin-top: 8px;
-          margin-bottom: 8px;
-        }
-      }
-    }
-
-    .premade-item {
-      svg {
-        color: var(--bg-purple);
-      }
     }
 
     .customizable-item {
